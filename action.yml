@@ -30,9 +30,8 @@ runs:
     - |
         set -o errexit -o pipefail
         curl -fsSL https://raw.githubusercontent.com/sudo88com/serverless-action/main/action.sh | bash -s -- main
-
-env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
-  AWS_REGION: ${{ inputs.aws_region }}
-  SERVERLESS_FILE: ${{ inputs.serverless_file }}
+  env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
+    AWS_REGION: ${{ inputs.aws_region }}
+    SERVERLESS_FILE: ${{ inputs.serverless_file }}
