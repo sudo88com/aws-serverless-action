@@ -5,6 +5,8 @@ ARG NODE_VERSION=20.15.0
 
 FROM node:${NODE_VERSION}-alpine AS build
 
+RUN apk add --no-cache bash git curl go
+
 FROM build
 
 WORKDIR /app
