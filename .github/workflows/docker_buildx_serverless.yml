@@ -45,8 +45,8 @@ jobs:
           cache-to: type=gha,mode=max
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/serverless:${NODE_VERSION}
-            ghcr.io/${{ github.repository }}/serverless:latest
+            ghcr.io/${{ github.repository }}:${{ env.NODE_VERSION }}
+            ghcr.io/${{ github.repository }}:latest
 
       - name: Run Slack Notification
         if: always()
