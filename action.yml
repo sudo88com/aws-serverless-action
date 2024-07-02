@@ -1,4 +1,4 @@
-name: 'Serverless Action'
+name: 'AWS Serverless Action'
 description: 'A GitHub Action for deploying with Serverless Framework'
 author: 'Anthony Yung <antyung41@gmail.com>'
 branding:
