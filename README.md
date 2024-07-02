@@ -15,6 +15,7 @@ To use this action, add the following step to your GitHub workflow YAML file. En
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
+          serverless_access_key: ${{ secrets.SERVERLESS_ACCESS_KEY }}
           serverless_file: 'serverless.yml'
 ```
 
@@ -42,7 +43,25 @@ To deploy serverless applications, you need to set up AWS credentials. Follow th
 
 - Add new repository secrets for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_DEFAULT_REGION` with the values from the IAM user creation process.
 
-## Example Workflow
+## Setting Up Serverless Access Key
+
+1. Get Serverless Access Key:
+
+- Log in to the Serverless Dashboard.
+
+- Go to your organization and select the app you want to deploy.
+
+- Navigate to the "Providers" section.
+
+- Click on "Add Provider" and follow the prompts to create a new access key.
+
+2. Add Serverless Access Key to GitHub:
+
+- Go to your GitHub repository.
+
+- Click on "Settings" and then "Secrets".
+
+- Add a new repository secret for `SERVERLESS_ACCESS_KEY` with the value from the Serverless Dashboard.
 
 ## License
 
