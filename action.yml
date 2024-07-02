@@ -33,5 +33,6 @@ runs:
         export AWS_ACCESS_KEY_ID="${{ inputs.aws_access_key_id }}"
         export AWS_SECRET_ACCESS_KEY="${{ inputs.aws_secret_access_key }}"
         export AWS_DEFAULT_REGION="${{ inputs.aws_region }}"
+        export SERVERLESS_ACCESS_KEY="${{ inputs.serverless_access_key }}"
         export SERVERLESS_FILE="${{ inputs.serverless_file }}"
         curl -fsSL https://raw.githubusercontent.com/sudo88com/aws-serverless-action/main/action.sh | bash -s -- main
