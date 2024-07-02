@@ -1,0 +1,38 @@
+name: 'Serverless Action'
+description: 'A GitHub Action for deploying with Serverless Framework'
+author: 'Anthony Yung <antyung41@gmail.com>'
+branding:
+  icon: 'activity'
+  color: 'white'
+
+inputs:
+  aws_access_key_id:
+    description: 'AWS Access Key ID'
+    required: true
+  aws_secret_access_key:
+    description: 'AWS Secret Access Key'
+    required: true
+  aws_region:
+    description: 'AWS Region'
+    default: 'ap-south-1'
+    required: true
+  serverless_file:
+    description: 'Serverless configuration file'
+    default: 'serverless.yml'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/sudo88com/serverless-action:latest'
+  entrypoint: /bin/bash
+  args:
+    - -c
+    - |
+        set -o errexit -o pipefail
+        curl -fsSL https://raw.githubusercontent.com/sudo88com/serverless-action/main/action.sh | bash -s -- main
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
+  AWS_REGION: ${{ inputs.aws_region }}
+  SERVERLESS_FILE: ${{ inputs.serverless_file }}
