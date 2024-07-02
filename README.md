@@ -9,13 +9,13 @@ Deploy serverless applications seamlessly using GitHub Actions with `aws-serverl
 To use this action, add the following step to your GitHub workflow YAML file. Ensure that you configure your AWS credentials and Serverless framework settings before deploying.
 
 ```yaml
-    - name: Deploy Serverless Application
-      uses: sudo88com/aws-serverless-action@v1 # Check https://github.com/sudo88com/aws-serverless-action/releases for latest release
-      with:
-        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws_region: 'ap-south-1'
-        serverless_config_file: 'serverless.yml'
+      - name: Deploy Serverless Application
+        uses: sudo88com/serverless-action@v1 # Check https://github.com/sudo88com/serverless-action/releases for latest release
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
+          serverless_file: 'serverless.yml'
 ```
 
 ## Setting Up AWS Credentials
@@ -40,34 +40,9 @@ To deploy serverless applications, you need to set up AWS credentials. Follow th
 
 - Click on "Settings" and then "Secrets".
 
-- Add new repository secrets for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` with the values from the IAM user creation process.
+- Add new repository secrets for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_DEFAULT_REGION` with the values from the IAM user creation process.
 
 ## Example Workflow
-
-```yaml
-name: Deploy Serverless Application
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Install Serverless Framework
-        run: npm install -g serverless
-
-      - name: Deploy Serverless Application
-        uses: sudo88com/aws-serverless-action@v1
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: 'us-east-1'
-          serverless_config_file: 'serverless.yml'
-```
 
 ## License
 
