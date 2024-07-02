@@ -1,8 +1,8 @@
-# sudo88com/serverless-action
+# sudo88com/aws-serverless-action
 
-[![serverless-action](https://img.shields.io/github/v/release/sudo88com/serverless-action.svg)](https://github.com/sudo88com/serverless-action/releases)
+[![aws-serverless-action](https://img.shields.io/github/v/release/sudo88com/aws-serverless-action.svg)](https://github.com/sudo88com/aws-serverless-action/releases)
 
-Deploy serverless applications seamlessly using GitHub Actions with `serverless-action`. This GitHub Action enables you to deploy your serverless framework projects directly from your GitHub workflows, automating the deployment process for your serverless applications.
+Deploy serverless applications seamlessly using GitHub Actions with `aws-serverless-action`. This GitHub Action enables you to deploy your serverless framework projects directly from your GitHub workflows, automating the deployment process for your serverless applications.
 
 ## Usage
 
@@ -10,7 +10,7 @@ To use this action, add the following step to your GitHub workflow YAML file. En
 
 ```yaml
     - name: Deploy Serverless Application
-      uses: sudo88com/serverless-action@v1 # Check https://github.com/sudo88com/serverless-action/releases for latest release
+      uses: sudo88com/aws-serverless-action@v1 # Check https://github.com/sudo88com/aws-serverless-action/releases for latest release
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -61,7 +61,7 @@ jobs:
         run: npm install -g serverless
 
       - name: Deploy Serverless Application
-        uses: sudo88com/serverless-action@v1
+        uses: sudo88com/aws-serverless-action@v1
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
