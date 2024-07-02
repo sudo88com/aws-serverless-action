@@ -31,7 +31,6 @@ jobs:
       - name: Extract version from Dockerfile
         id: extract_version
         run: |
-          cd serverless
           NODE_VERSION=$(grep -oP '^ARG NODE_VERSION=\K.*' Dockerfile)
           echo "NODE_VERSION=${NODE_VERSION}" >> $GITHUB_ENV
           echo "NODE_VERSION=${NODE_VERSION}"
