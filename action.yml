@@ -17,6 +17,9 @@ inputs:
     description: 'AWS Region'
     default: 'ap-south-1'
     required: true
+  serverless_access_key:
+    description: 'Serverless Access Key'
+    required: true
   serverless_file:
     description: 'Serverless configuration file'
     default: 'serverless.yml'
