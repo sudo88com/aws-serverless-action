@@ -2,8 +2,8 @@ name: 'AWS Serverless Action'
 description: 'A GitHub Action for deploying with Serverless Framework'
 author: 'Anthony Yung <antyung41@gmail.com>'
 branding:
-  icon: 'activity'
-  color: 'white'
+  icon: 'zap'
+  color: 'blue'
 
 inputs:
   aws_access_key_id:
