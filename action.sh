@@ -7,10 +7,11 @@ set -o errexit -o pipefail
 
 # GitHub Action Layer
 function main() {
-    echo "Running Serverless Action"
+    echo "Running AWS Serverless Action"
     pwd
     ls -all
-    serverless deploy ${SERVERLESS_FILE}
+    echo "Using Serverless configuration file: ${SERVERLESS_FILE}"
+    serverless deploy --config ${SERVERLESS_FILE}
 }
 
 if [ "$#" -eq 1 ]; then
