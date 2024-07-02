@@ -25,7 +25,7 @@ To deploy serverless applications, you need to set up AWS credentials. Follow th
 
 1. Create IAM User:
 
-- Go to the AWS IAM Console.
+- Go to the [AWS IAM Console](https://console.aws.amazon.com/iam/).
 
 - Click on "Users" and then "Add user".
 
@@ -37,17 +37,17 @@ To deploy serverless applications, you need to set up AWS credentials. Follow th
 
 2. Add Secrets to GitHub:
 
-- Go to your GitHub repository.
+- Go to your [GitHub repository](https://github.com/).
 
 - Click on "Settings" and then "Secrets".
 
-- Add new repository secrets for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_DEFAULT_REGION` with the values from the IAM user creation process.
+- Add new repository secrets for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_DEFAULT_REGION` with the values from the IAM user creation process.
 
 ## Setting Up Serverless Access Key
 
 1. Get Serverless Access Key:
 
-- Log in to the Serverless Dashboard.
+- Log in to the [Serverless Dashboard](https://dashboard.serverless.com/).
 
 - Go to your organization and select the app you want to deploy.
 
@@ -57,7 +57,7 @@ To deploy serverless applications, you need to set up AWS credentials. Follow th
 
 2. Add Serverless Access Key to GitHub:
 
-- Go to your GitHub repository.
+- Go to your [GitHub repository](https://github.com/).
 
 - Click on "Settings" and then "Secrets".
 
