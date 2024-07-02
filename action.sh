@@ -10,7 +10,7 @@ function main() {
     echo "Running Serverless Action"
     pwd
     ls -all
-    serverless deploy
+    serverless deploy ${SERVERLESS_FILE}
 }
 
 if [ "$#" -eq 1 ]; then

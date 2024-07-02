@@ -1,3 +1,4 @@
+---
 name: 'AWS Serverless Action'
 description: 'A GitHub Action for deploying with Serverless Framework'
 author: 'Anthony Yung <antyung41@gmail.com>'
@@ -29,9 +30,12 @@ runs:
     - -c
     - |
         set -o errexit -o pipefail
+        export AWS_ACCESS_KEY_ID="${{ inputs.aws_access_key_id }}"
+        export AWS_SECRET_ACCESS_KEY="${{ inputs.aws_secret_access_key }}"
+        export AWS_DEFAULT_REGION="${{ inputs.aws_region }}"
+        export SERVERLESS_FILE="${{ inputs.serverless_file }}"
+        echo AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+        echo AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+        echo AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+        echo SERVERLESS_FILE=$SERVERLESS_FILE
         curl -fsSL https://raw.githubusercontent.com/sudo88com/aws-serverless-action/main/action.sh | bash -s -- main
-  env:
-    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    AWS_REGION: ${{ inputs.AWS_DEFAULT_REGION }}
-    SERVERLESS_FILE: ${{ inputs.serverless_file }}
