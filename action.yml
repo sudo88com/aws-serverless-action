@@ -1,7 +1,7 @@
 ---
 name: 'AWS Serverless Action'
 description: 'A GitHub Action for deploying with Serverless Framework'
-author: 'Anthony Yung <antyung41@gmail.com>'
+author: 'Anthony Yung <antyungx@gmail.com>'
 branding:
   icon: 'zap'
   color: 'blue'
